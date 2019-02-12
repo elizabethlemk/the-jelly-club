@@ -14,11 +14,16 @@
   <p><%= f.label :bread_id, "Bread:" %>
   <%= f.collection_select :bread_id, Bread.all, :id, :name %></p>
 
-  <p><%= f.label :spread_ids, "Spread:" %>
-  <%= f.collection_check_boxes :spread_ids, Spread.all, :id, :name %></p>
+  <%= f.label :spread_ids, "Spread(s):" %>
+  <%= f.collection_check_boxes(:spread_ids, Spread.all, :id, :name) do |b|%>
+    <br><%= b.label class:"label-checkbox" do%>
+      <%=b.check_box + b.text%>
+     <%end%>
+ <% end %>
 
-  <p><%= f.label :delicious, "Is it delicious?" %>
-  <%= f.check_box :delicious %></p>
+
+  <p><%= f.label :delicious, "Is it delicious? Yes" %>
+  <%= f.check_box :delicious%></p>
 
   <%= f.hidden_field :user_id, value: @current_user.id %>
   <p><%= f.submit %></p>

@@ -1,3 +1,12 @@
 <h1><%= @bread.name %></h1>
 
 <%= link_to "Edit", edit_bread_path %>
+
+
+<% if !@bread.sandwiches.blank? %>
+<h2>Featured in:</h2>
+
+<% @bread.sandwiches.each do |sandwich| %>
+<p><%= link_to sandwich.name, sandwich_path(sandwich) %></p>
+<% end %>
+<% end %>

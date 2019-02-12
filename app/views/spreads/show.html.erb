@@ -1,1 +1,10 @@
 <h1><%= @spread.name %></h1>
+
+
+
+<% if !@spread.sandwiches.blank? %>
+<h3>Featured in</h3>
+<% @spread.sandwiches.each do |sandwich| %>
+<p><%= link_to sandwich.name, sandwich_path(sandwich) %></p>
+<% end %>
+<% end %>
