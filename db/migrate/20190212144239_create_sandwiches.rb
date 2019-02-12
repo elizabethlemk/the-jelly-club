@@ -5,7 +5,6 @@ class CreateSandwiches < ActiveRecord::Migration[5.2]
       t.integer :user_id
       t.integer :bread_id
       t.boolean :delicious
-
       t.timestamps
     end
   end

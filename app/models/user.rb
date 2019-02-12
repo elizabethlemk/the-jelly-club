@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   has_secure_password
   has_many :sandwiches
+  has_many :user_feedbacks
+  has_many :feedbacks, through: :user_feedbacks
 
   validates :first_name, :last_name, :user_name, presence: true
   validates :first_name, :last_name, length: { minimum: 2 }
