@@ -13,95 +13,56 @@
  */
 
  @import "bootstrap";
+@import "./user.scss";
 
- ul{
+body ul {
    list-style: none;
    margin: 0;
    padding: 0;
  }
 
- .body {
-   margin-left: 25%;
-   margin-right: 25%;
- }
+main {
+  padding-top: 3%;
+  padding-left: 25%;
+  padding-right: 25%;
+  padding-bottom: 3%;
+  font-family: sans-serif;
+  text-align: center;
+}
 
- h1, body {
-   font-family: sans-serif;
-   text-align: center;
- }
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 38%;
+  right: auto;
 
+}
 
-   .nav {
-     padding: 5px 10px 10px 10px;
-     display: flex;
-     flex-direction: row;
-   }
+.navbar a {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
 
-   .nav ul {
-     text-decoration: none;
-     list-style-type: none;
-     margin: 0;
-     padding: 0;
-     float: left;
-    }
+.navbar ul li a {
+ color: #111;
+ text-align: center;
+ text-decoration: none;
+ transform: all 5s;
+ font-family: sans-serif;
+ text-transform: uppercase;
+ letter-spacing: 2px;
+}
 
-   .nav ul li {
-     float: left;
-   }
+.navbar ul li:hover {
+  opacity: 100;
+  color: white;
+  background-color: gold;
+}
 
-   .nav ul li a {
-     display: block;
-     color: #111;
-     text-align: center;
-     padding: 14px 16px;
-     text-decoration: none;
-     transform: all 5s;
-     font-family: sans-serif;
-     text-transform: uppercase;
-     letter-spacing: 2px;
-   }
-
-   .nav li a:hover {
-     opacity: 100;
-     color: white;
-     background-color: #111;
- }
-
-  .dropbtn li a {
-   display: inline-block;
-   color: #111;
-   text-align: center;
-   padding: 14px 16px;
-   text-decoration: none;
- }
-
- .dropdown:hover .dropbtn {
-   background-color: #FFC300;
- }
-
- .dropdown li {
-   display: inline-block;
- }
-
- .dropdown-content {
-   display: none;
-   position: absolute;
-   background-color: gray;
-   min-width: 160px;
-   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-   z-index: 1;
- }
-
- .dropdown-content a {
-   color: gray;
-   padding: 12px 16px;
-   text-decoration: none;
-   display: block;
-   text-align: left;
- }
-
- .dropdown-content a:hover {background-color: #f1f1f1}
-
- .dropdown:hover .dropdown-content {
-   display: block;
- }
+.dropdown-menu a:hover {
+ opacity: 100;
+ color: white;
+ background-color: #111;
+}

@@ -1,11 +1,11 @@
 class User < ApplicationRecord
   has_secure_password
-  has_many :sandwiches
+  has_many :sandwiches, dependent: :destroy
   has_many :user_feedbacks
   #Might have to take this out because we don't want other users to edit someones sandwich
   has_many :sandwiches, through: :user_feedbacks
   ####
-  
+
   validates :first_name, :last_name, :user_name, presence: true
   validates :first_name, :last_name, length: { minimum: 2 }
   validates :user_name, length: { in: 6..30 }

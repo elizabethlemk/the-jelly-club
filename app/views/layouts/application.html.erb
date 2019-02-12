@@ -10,59 +10,79 @@
   </head>
 
   <body>
-
-    <nav class="navbar-light bg-light d-flex">
-    <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="/">The Jelly Club</a>
-      </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/">The Jelly Club</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+<!-- Sandwich Options Viewable To Members Only -->
       <% if logged_in? %>
-      <div class="nav navbar-nav">
-        <div class="active" style="padding: 20px;"><a href="/users/">Home</a></div>
-        <div class="dropdown" style="padding: 20px;"><a class="dropdown-toggle" data-toggle="dropdown" href="/breads">Breads <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><%= link_to "New Bread", new_bread_path %></li>
-            <li><%= link_to "All Breads", breads_path %></li>
-            <% Bread.all.each do |bread| %>
-            <li><%= link_to bread.name, bread_path(bread) %></li>
-            <% end %>
-          </ul>
-        </div>
-        <div class="dropdown" style="padding: 20px;"><a class="dropdown-toggle" data-toggle="dropdown" href="/spreads">Spreads <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><%= link_to "New Spread", new_spread_path %></li>
-            <li><%= link_to "All Spreads", spreads_path %></li>
-            <% Spread.all.each do |spread| %>
-            <li><%= link_to spread.name, spread_path(spread) %></li>
-            <% end %>
-          </ul>
-        </div>
-        <div class="dropdown" style="padding: 20px;"><a class="dropdown-toggle" data-toggle="dropdown" href="/sandwiches">Sandwiches <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><%= link_to "Make a Sandwich", new_sandwich_path %></li>
-            <li><%= link_to "All Sandwiches", sandwiches_path %></li>
-          </ul>
-        </div>
-        <div style="padding: 20px">
-          <%= link_to @current_user.user_name, user_path(@current_user) %>
-          <%= link_to "Logout", logout_path, method: "delete", class: "glyphicon glyphicon-log-out" %>
-      </div>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="<%= user_path(@current_user) %>">Home <span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item dropdown">
+           <a class="nav-link dropdown-toggle" href="/breads" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Breads
+           </a>
+           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+             <a class="dropdown-item" href="<%= new_bread_path %>">New Bread</a>
+             <a class="dropdown-item" href="<%= breads_path %>">All Breads</a>
+           </div>
+         </li>
+
+         <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="/spreads" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Spreads
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="<%= new_spread_path %>">New Spread</a>
+            <a class="dropdown-item" href="<%= spreads_path %>">All Spreads</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" href="/sandwiches" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           Sandwiches
+         </a>
+         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+           <a class="dropdown-item" href="<%= new_sandwich_path %>">New Sandwich</a>
+           <a class="dropdown-item" href="<%= sandwiches_path %>">All Sandwiches</a>
+         </div>
+       </li>
+        </ul>
+<!-- User Section -->
+        <ul>
+        <div class="d-flex flex-row-reverse bd-highlight">
+          <li class="nav-item dropdown">
+           <a class="nav-link dropdown-toggle" href="/breads" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             <%= @current_user.user_name %>
+           </a>
+           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+             <a class="dropdown-item" href="<%= user_path(@current_user) %>">View Profile</a>
+             <a class="dropdown-item" href="<%= edit_user_path(@current_user.id) %>">Edit Account</a>
+             <%= link_to "Logout", logout_path, method: "delete", class: "dropdown-item"  %>
+           </div>
+         </li>
+       </ul>
         <% end %>
-      <div class="nav navbar-nav navbar-right">
+
         <% if !logged_in? %>
-          <div style="padding: 20px"><a href="/users/new"><span class="glyphicon glyphicon-user"></span> Sign Up</a></div>
-          <div style="padding: 20px"><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></div>
+          <div class="p-2 bd-highlight"><a href="/users/new">Sign Up</a></div>
+          <div class="p-2 bd-highlight"><a href="/login">Login </a></div>
         <% end %>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
     <main class = "main body">
       <%= yield %>
     </main>
 
   <footer><div class="footer">
-      FOOTER
+      Website created by Elizabeth Le and Mohammed Ali
     </div></footer>
   </body>
 </html>

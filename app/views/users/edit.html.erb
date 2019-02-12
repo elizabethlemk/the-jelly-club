@@ -1,26 +1,52 @@
-<h1>Edit profile</h1>
-<% if flash[:error] %>
-  <% flash[:error].each do |error| %>
-    <li style=" color: red;"><%= error %></li>
+
+
+<h1>Hello, <%= @current_user.first_name %> <%= @current_user.last_name %></h1>
+
+
+<div class="user-edit-page">
+  <div class="actions">
+    <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
+      <a class="nav-link active" data-toggle="pill" href="#v-pills-home" role="tab" aria-selected="true">Edit Profile</a>
+      <a class="nav-link" data-toggle="pill" href="#v-pills-password" role="tab">Change Password</a>
+      <a class="nav-link" data-toggle="pill">Authorized Applications</a>
+      <a class="nav-link" data-toggle="pill">Email and SMS</a>
+      <a class="nav-link" data-toggle="pill">Manage Contacts</a>
+      <a class="nav-link" data-toggle="pill">Privacy and Security</a>
+    </div>
+  </div>
+  <div class="details tab-content">
+    <% if flash[:error] %>
+      <% flash[:error].each do |error| %>
+        <li style=" color: red;"><%= error %></li>
+        <% end %>
     <% end %>
-<% end %>
+    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+      <%= form_for @user do |f| %>
+        <p><%= f.label :first_name %>
+          <%= f.text_field :first_name %></p>
 
-<%= form_for @user do |f| %>
-  <p><%= f.label :first_name %>
-    <%= f.text_field :first_name %></p>
+        <p><%= f.label :last_name %>
+        <%= f.text_field :last_name %></p>
 
-  <p><%= f.label :last_name %>
-  <%= f.text_field :last_name %></p>
+        <p><%= f.label :user_name %>
+        <%= f.text_field :user_name %></p>
 
-  <p><%= f.label :user_name %>
-  <%= f.text_field :user_name %></p>
+        <p><%= f.submit "Update" %></p>
 
-  <p><%= f.label :password %>
-  <%= f.password_field :password %></p>
+      <% end %>
+    </div>
 
-  <p><%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %></p>
+    <div class="tab-pane fade show " id="v-pills-password" role="tabpanel" aria-labelledby="v-pills-password-tab">
+      <%= form_for @user do |f| %>
 
-  <p><%= f.submit %></p>
+      <p><%= f.label :password, "New Password"%>
+      <%= f.password_field :password %></p>
 
-<% end %>
+      <p><%= f.label :password_confirmation, "Re-type Password" %>
+      <%= f.password_field :password_confirmation %></p>
+
+      <p><%= f.submit "Update" %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
