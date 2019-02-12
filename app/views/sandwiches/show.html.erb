@@ -9,3 +9,16 @@
 </ul>
 
 <%= link_to "Edit", edit_sandwich_path %>
+<div>
+  <h3>Comments</h3>
+  <hr>
+  <ul>
+  <% @feedback.each do |feedback| %>
+  <li>
+  <%= feedback.comment %>
+  Rating: <%= feedback.rating %>
+  <%= feedback.user.user_name %>
+  <% end %>
+  </li>
+  </ul>
+</div>

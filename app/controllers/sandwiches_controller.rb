@@ -7,6 +7,8 @@ class SandwichesController < ApplicationController
   end
 
   def show
+    @feedback = @sandwich.user_feedbacks
+    render :show
   end
 
   def new
