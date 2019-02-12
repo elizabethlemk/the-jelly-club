@@ -22,7 +22,11 @@
     </div>
 
     <div class="tab-pane fade show " id="v-pills-comments" role="tabpanel" aria-labelledby="v-pills-comments-tab">
-      <p>COMMENTS GO HERE</p>
+      <ol>
+        <% @current_user.user_feedbacks.each do |feedback| %>
+          <li>Comment: <%= feedback.comment %> Rating: <%= feedback.rating %> <br> Sandwich: <%= feedback.sandwich.name %></li>
+        <% end %>
+      </ol>
     </div>
   </div>
 </div>
