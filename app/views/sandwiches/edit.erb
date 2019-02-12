@@ -8,17 +8,26 @@
 
 <%= form_for @sandwich do |f| %>
 
-  <p><%= f.label :name %>
+  <p><%= f.label :name, "Name:" %>
   <%= f.text_field :name %></p>
 
-  <p><%= f.label :bread_id, "Bread" %>
+  <p><%= f.label :bread_id, "Bread:" %>
   <%= f.collection_select :bread_id, Bread.all, :id, :name %></p>
 
-  <p><%= f.label :spread_id, "Spread" %>
-  <%= f.collection_select :spread_id, Spread.all, :id, :name %></p>
+  <%= f.label :spread_ids, "Spread(s):" %>
+  <%= f.collection_check_boxes(:spread_ids, Spread.all, :id, :name) do |b|%>
+    <br><%= b.label class:"label-checkbox" do%>
+      <%=b.check_box + b.text%>
+     <%end%>
+ <% end %>
+
 
   <p><%= f.label :delicious, "Is it delicious?" %>
-  <%= f.check_box :delicious %></p>
+    <%= f.label :delicious, "Yes", :value => "Yes" %>
+    <%= f.radio_button :delicious, true %>
+    <%= f.label :delicious, "No", :value => "No" %>
+    <%= f.radio_button :delicious, false %> </p>
 
+  <%= f.hidden_field :user_id, value: @current_user.id %>
   <p><%= f.submit %></p>
 <% end %>

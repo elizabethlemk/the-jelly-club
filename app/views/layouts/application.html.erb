@@ -15,6 +15,7 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+<!-- Sandwich Options Viewable To Members Only -->
       <% if logged_in? %>
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav mr-auto">
@@ -52,14 +53,20 @@
          </div>
        </li>
         </ul>
-
-        <span class="navbar-text">
-          <%= link_to @current_user.user_name, user_path(@current_user) %>
-        </span>
-
+<!-- User Section -->
+        <ul>
         <div class="d-flex flex-row-reverse bd-highlight">
-          <div class="p-2 bd-highlight"><%= link_to "Logout", logout_path, method: "delete" %></div>
-
+          <li class="nav-item dropdown">
+           <a class="nav-link dropdown-toggle" href="/breads" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             <%= @current_user.user_name %>
+           </a>
+           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+             <a class="dropdown-item" href="<%= user_path(@current_user) %>">View Profile</a>
+             <a class="dropdown-item" href="<%= edit_user_path(@current_user.id) %>">Edit Account</a>
+             <%= link_to "Logout", logout_path, method: "delete", class: "dropdown-item"  %>
+           </div>
+         </li>
+       </ul>
         <% end %>
 
         <% if !logged_in? %>
@@ -67,7 +74,6 @@
           <div class="p-2 bd-highlight"><a href="/login">Login </a></div>
         <% end %>
         </div>
-
       </div>
     </nav>
 
@@ -76,7 +82,7 @@
     </main>
 
   <footer><div class="footer">
-      FOOTER
+      Website created by Elizabeth Le and Mohammed Ali
     </div></footer>
   </body>
 </html>
