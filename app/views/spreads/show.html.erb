@@ -4,27 +4,43 @@
 <div class="spread-page">
   <div class="actions">
     <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
-      <% if !@spread.sandwiches.blank? %>
+
       <a class="nav-link active" data-toggle="pill" href="#v-pills-home" role="tab" aria-selected="true">Featured in Sandwiches</a>
-      <% end %>
-      <a class="nav-link" data-toggle="pill" href="#v-pills-favorites" role="tab">Favorites</a>
-      <a class="nav-link" data-toggle="pill">Authorized Applications</a>
-      <a class="nav-link" data-toggle="pill">Email and SMS</a>
-      <a class="nav-link" data-toggle="pill">Manage Contacts</a>
-      <a class="nav-link" data-toggle="pill">Privacy and Security</a>
+
+      <a class="nav-link" data-toggle="pill" href="#v-pills-edit" role="tab">Edit</a>
+      <a class="nav-link" data-toggle="pill" href="#v-pills-delete" role="tab">Delete</a>
     </div>
   </div>
   <div class="details tab-content">
     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+      <% if @spread.sandwiches.blank? %>
+      <p>Not featured in any sandwiches</p>
+      <% else  %>
       <ul>
         <% @spread.sandwiches.each do |sandwich| %>
         <li><%= link_to sandwich.name, sandwich_path(sandwich) %></li>
         <% end %>
       </ul>
+      <% end %>
     </div>
 
-    <div class="tab-pane fade show " id="v-pills-favorites" role="tabpanel" aria-labelledby="v-pills-favorites-tab">
-      <p>FAVORITES GO HERE</p>
+    <div class="tab-pane fade show " id="v-pills-edit" role="tabpanel" aria-labelledby="v-pills-edit-tab">
+      <% if flash[:error] %>
+        <% flash[:error].each do |error| %>
+          <li style=" color: red;"><%= error %></li>
+          <% end %>
+      <% end %>
+
+      <%= form_for @spread do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+
+        <%= f.submit %>
+      <% end %>
+    </div>
+
+    <div class="tab-pane fade show " id="v-pills-delete" role="tabpanel" aria-labelledby="v-pills-delete-tab">
+      <%= button_to "Delete", spread_path, method: :delete, data: {confirm: "Are you sure you want to delete?"}, class: "button" %>
     </div>
   </div>
 </div>
