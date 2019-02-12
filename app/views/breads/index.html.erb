@@ -1,0 +1,8 @@
+
+<h1>List of Breads:</h1>
+<ul>
+  <% @breads.each do |bread| %>
+  <li><%=link_to bread.name, bread_path(bread) %></li>
+  <% end %>
+
+</ul>

@@ -1,0 +1,9 @@
+
+<h1>List of Spreads:</h1>
+
+<ul>
+  <% @spreads.each do |spread| %>
+  <li><%= link_to spread.name, spread_path(spread) %></li>
+  <% end %>
+
+</ul>

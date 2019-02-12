@@ -1,0 +1,11 @@
+<h1><%= @sandwich.name %></h1>
+
+<h3>Bread: <%= @sandwich.bread.name %></h3>
+<h3>Spread:</h3>
+<ul>
+<% @sandwich.spreads.each do |spread| %>
+  <li><%= spread.name %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Edit", edit_sandwich_path %>

@@ -1,0 +1,15 @@
+<h1>Log in:</h1>
+
+<% if flash[:error] %>
+  <li style=" color: red;"><%= flash[:error] %></li>
+<% end %>
+
+<%= form_tag "/sessions" do %>
+  <label for="user_name">Username:</label>
+  <%= text_field_tag :user_name %>
+  <br>
+  <label for="password">Password:</label>
+  <%= password_field_tag :password %>
+  <br>
+  <%= submit_tag %>
+<% end %>

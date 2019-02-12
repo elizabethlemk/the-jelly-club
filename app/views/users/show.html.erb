@@ -1,0 +1,5 @@
+<h1>Your Sandwiches</h1>
+
+<% @current_user.sandwiches.each do |sandwich| %>
+<li><%= link_to sandwich.name, sandwich_path(sandwich) %></li>
+<% end %>

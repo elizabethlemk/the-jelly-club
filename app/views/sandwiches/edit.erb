@@ -1,0 +1,24 @@
+<h1>Edit a Sandwich:</h1>
+
+<% if flash[:error] %>
+  <% flash[:error].each do |error| %>
+    <li style=" color: red;"><%= error %></li>
+    <% end %>
+<% end %>
+
+<%= form_for @sandwich do |f| %>
+
+  <p><%= f.label :name %>
+  <%= f.text_field :name %></p>
+
+  <p><%= f.label :bread_id, "Bread" %>
+  <%= f.collection_select :bread_id, Bread.all, :id, :name %></p>
+
+  <p><%= f.label :spread_id, "Spread" %>
+  <%= f.collection_select :spread_id, Spread.all, :id, :name %></p>
+
+  <p><%= f.label :delicious, "Is it delicious?" %>
+  <%= f.check_box :delicious %></p>
+
+  <p><%= f.submit %></p>
+<% end %>
