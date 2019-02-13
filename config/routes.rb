@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   resources :spreads
   resources :sandwiches
   resources :users
+  resources :user_feedbacks
   get '/', to: 'application#index'
 end
