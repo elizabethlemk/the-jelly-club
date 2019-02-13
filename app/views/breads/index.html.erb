@@ -1,8 +1,27 @@
+<h1>Breads</h1>
 
-<h1>List of Breads:</h1>
-<ul>
-  <% @breads.each do |bread| %>
-  <li><%=link_to bread.name, bread_path(bread) %></li>
-  <% end %>
 
-</ul>
+<div class="bread-page">
+  <div class="actions">
+    <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
+      <a class="nav-link active" data-toggle="pill" href="#v-pills-home" role="tab" aria-selected="true">All Breads</a>
+      <a class="nav-link" data-toggle="pill" href="#v-pills-new" role="tab">New Bread</a>
+    </div>
+  </div>
+  <div class="details tab-content">
+    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+
+      <h1>List of Breads:</h1>
+      <ul>
+        <% @breads.each do |bread| %>
+        <li><%=link_to bread.name, bread_path(bread) %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="tab-pane fade show " id="v-pills-new" role="tabpanel" aria-labelledby="v-pills-new-tab">
+      <%= render :partial => "breads/new" %>
+    </div>
+
+  </div>
+</div>

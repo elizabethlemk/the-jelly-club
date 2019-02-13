@@ -3,8 +3,7 @@
 <!-- User Section -->
 <h6>Created by: <%= link_to @sandwich.user.user_name, user_path(@sandwich.user) %></h6>
 <% if current_user.id == @sandwich.user_id%>
-  <%= link_to "Edit", edit_sandwich_path %>
-  <%= link_to "Delete", sandwich_path, method: :delete %>
+  <%= link_to "Edit", edit_sandwich_path %> | <%= link_to "Delete", sandwich_path, method: :delete %>
 <% end %>
 
 <!-- Bread Information -->

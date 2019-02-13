@@ -3,6 +3,7 @@ class BreadsController < ApplicationController
   before_action :authorized
 
   def index
+    @bread = Bread.new
     @breads = Bread.all
   end
 
@@ -11,6 +12,7 @@ class BreadsController < ApplicationController
 
   def new
     flash[:error] = []
+    @breads = Bread.all
     @bread = Bread.new
   end
 
