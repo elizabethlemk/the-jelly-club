@@ -149,8 +149,6 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.19.0, < 2.0)
     rake (12.3.2)
-    rating (0.8.0)
-      activerecord (>= 4.2, < 6)
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
@@ -221,7 +219,6 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
   rails (~> 5.2.2)
-  rating
   sass-rails (~> 5.0)
   selenium-webdriver
   spring

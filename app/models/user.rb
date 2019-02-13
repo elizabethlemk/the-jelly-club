@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
-  rating
+
   has_many :sandwiches, dependent: :destroy
   has_many :user_feedbacks
 

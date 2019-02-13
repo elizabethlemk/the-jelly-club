@@ -9,10 +9,16 @@ class UserFeedbacksController < ApplicationController
     @sandwich = Sandwich.find(params["user_feedback"]["sandwich_id"])
     redirect_to sandwich_path(@sandwich)
   end
+
   def edit
   end
+
   def update
+    @user = User.find(@user_feedback.user_id)
+    @user_feedback.update(user_feedback_params)
+    redirect_to user_path(@user)
   end
+
   def destroy
     @user = User.find(@user_feedback.user_id)
     @user_feedback.destroy
@@ -25,6 +31,6 @@ class UserFeedbacksController < ApplicationController
     @user_feedback = UserFeedback.find(params[:id])
   end
   def user_feedback_params
-    params.require(:user_feedback).permit(:user_id, :sandwich_id, :comment, :favorite)
+    params.require(:user_feedback).permit(:user_id, :sandwich_id, :rating, :comment, :favorite)
   end
 end
