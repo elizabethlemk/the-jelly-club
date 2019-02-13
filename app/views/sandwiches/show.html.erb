@@ -7,7 +7,9 @@
   <li><%= spread.name %></li>
   <% end %>
 </ul>
-
+<% if current_user %>
+<p>Rating: <%= rating_for @sandwich, "name", enable_half: true %></p>
+<% end %>
 <%= link_to "Edit", edit_sandwich_path %>
 <div>
   <h3>Comments</h3>

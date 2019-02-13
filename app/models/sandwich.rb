@@ -8,5 +8,5 @@ class Sandwich < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
 
-  
+  ratyrate_rateable "name"
 end

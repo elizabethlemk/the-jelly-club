@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
+  ratyrate_rater
   has_many :sandwiches, dependent: :destroy
   has_many :user_feedbacks
 
@@ -17,5 +18,5 @@ class User < ApplicationRecord
                        :allow_blank => true,
                        :on => :update
 
- ratyrate_rater
+
 end
