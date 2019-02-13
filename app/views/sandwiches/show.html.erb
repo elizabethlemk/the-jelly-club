@@ -12,7 +12,7 @@
 <div>
   <h3>Comments</h3>
   <hr>
-  <ul>
+  <ul style="overflow-y: scroll; height:200px;">
   <% @feedback.each do |feedback| %>
   <li>
   <%= feedback.comment %>
@@ -21,6 +21,7 @@
   <% end %>
   </li>
   </ul>
+  <hr>
 </div>
 <div>
   <%= render :partial => "user_feedbacks/new" %>
