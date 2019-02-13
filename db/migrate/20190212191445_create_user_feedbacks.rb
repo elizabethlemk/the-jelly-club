@@ -4,7 +4,6 @@ class CreateUserFeedbacks < ActiveRecord::Migration[5.2]
       t.integer :user_id
       t.integer :sandwich_id
       t.string :comment
-      t.integer :rating
       t.boolean :favorite
     end
   end

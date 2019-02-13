@@ -1,25 +1,28 @@
 <h1><%= @sandwich.name %></h1>
 
 <h3>Bread: <%= @sandwich.bread.name %></h3>
+
+
+
 <h3>Spread:</h3>
 <ul>
 <% @sandwich.spreads.each do |spread| %>
   <li><%= spread.name %></li>
   <% end %>
 </ul>
-<% if current_user %>
-<p>Rating: <%= rating_for @sandwich, "name", enable_half: true %></p>
+
+<% if current_user.id == @sandwich.user_id%>
+  <%= link_to "Edit", edit_sandwich_path %>
+  <%= link_to "Delete", sandwich_path, method: :delete %>
 <% end %>
-<%= link_to "Edit", edit_sandwich_path %>
+
 <div>
-  <h3>Comments</h3>
   <hr>
+  <h3>Comments</h3>
   <ul>
   <% @feedback.each do |feedback| %>
   <li>
-  <%= feedback.comment %>
-  Rating: <%= feedback.rating %>
-  <%= feedback.user.user_name %>
+  "<%= feedback.comment %>" by <%= feedback.user.user_name %>
   <% end %>
   </li>
   </ul>

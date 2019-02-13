@@ -1,17 +1,13 @@
 <h1>Add Comment:</h1>
 
 <%= form_for @user_feedback do |f| %>
+
   <%= f.hidden_field :user_id, value: @current_user.id %>
   <%= f.hidden_field :sandwich_id, value: @sandwich.id %>
 
-  <p><%= f.label :rating %>
-  <%= f.number_field :rating%>
-<%= rating_for @user_feedback, "rating", stars: 5, :enable_half => true, path: 'star_icons'  %></p>
-
-
-  <p><%= f.label :comment %>
+  <p>
   <%= f.text_area :comment %></p>
 
-  <p><%= f.submit %></p>
+  <p><%= f.submit "Submit" %></p>
 
 <% end %>
