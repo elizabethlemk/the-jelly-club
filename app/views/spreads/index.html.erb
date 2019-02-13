@@ -4,6 +4,7 @@
   <div class="actions">
     <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
       <a class="nav-link active" data-toggle="pill" href="#v-pills-home" role="tab" aria-selected="true">All Spreads</a>
+      <a class="nav-link" data-toggle="pill" href="#v-pills-new" role="tab">New Spread</a>
     </div>
   </div>
   <div class="details tab-content">
@@ -14,5 +15,10 @@
         <% end %>
       </ul>
     </div>
+
+    <div class="tab-pane fade show " id="v-pills-new" role="tabpanel" aria-labelledby="v-pills-new-tab">
+      <%= render :partial => "spreads/new" %>
+    </div>
+
   </div>
 </div>

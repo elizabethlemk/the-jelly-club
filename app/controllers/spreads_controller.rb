@@ -4,6 +4,7 @@ class SpreadsController < ApplicationController
 
   def index
     @spreads = Spread.all
+    @spread = Spread.new
   end
 
   def show
@@ -11,6 +12,7 @@ class SpreadsController < ApplicationController
 
   def new
     flash[:error] = []
+    @spreads = Spread.all
     @spread = Spread.new
   end
 
