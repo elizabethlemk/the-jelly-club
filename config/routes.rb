@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post '/rate' => 'rater#create', :as => 'rate'
   get '/login', to: 'sessions#new'
   post '/sessions', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'

@@ -17,5 +17,5 @@ class User < ApplicationRecord
                        :allow_blank => true,
                        :on => :update
 
-
+ ratyrate_rater
 end
