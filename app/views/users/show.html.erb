@@ -10,11 +10,37 @@
   </div>
   <div class="details tab-content">
     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-      <ul>
-        <% @current_user.sandwiches.each do |sandwich| %>
-        <li><%= link_to sandwich.name, sandwich_path(sandwich) %></li>
-        <% end %>
-      </ul>
+      <div class="good">
+        <h5>Good:</h5>
+          <ul>
+            <% good = [] %>
+          <% @current_user.sandwiches.each do |sandwich| %>
+            <% if sandwich.delicious == true %>
+              <% good << sandwich %>
+              <li><%= link_to sandwich.name, sandwich_path(sandwich) %></li>
+            <% end %>
+          <% end %>
+          <% if good.blank?  %>
+            <li>None</li>
+          <% end %>
+        </ul>
+      </div>
+
+      <div class="bad">
+        <h5>Bad:</h5>
+          <ul>
+            <% bad = [] %>
+          <% @current_user.sandwiches.each do |sandwich| %>
+            <% if sandwich.delicious == false %>
+              <% bad << sandwich %>
+              <li><%= link_to sandwich.name, sandwich_path(sandwich) %></li>
+            <% end %>
+          <% end %>
+          <% if bad.blank?  %>
+            <li>None</li>
+          <% end %>
+        </ul>
+      </div>
     </div>
 
     <div class="tab-pane fade show " id="v-pills-favorites" role="tabpanel" aria-labelledby="v-pills-favorites-tab">
