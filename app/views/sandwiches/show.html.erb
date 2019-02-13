@@ -1,6 +1,9 @@
 <h1><%= @sandwich.name %></h1>
 
 <h3>Bread: <%= @sandwich.bread.name %></h3>
+
+
+
 <h3>Spread:</h3>
 <ul>
 <% @sandwich.spreads.each do |spread| %>
@@ -8,7 +11,11 @@
   <% end %>
 </ul>
 
-<%= link_to "Edit", edit_sandwich_path %>
+<% if current_user.id == @sandwich.user_id%>
+  <%= link_to "Edit", edit_sandwich_path %>
+  <%= link_to "Delete", sandwich_path, method: :delete %>
+<% end %>
+
 <div>
   <%= render :partial => "user_feedbacks/new" %>
 </div>
@@ -18,9 +25,7 @@
   <ul style="overflow-y: scroll; height:200px;">
   <% @feedback.each do |feedback| %>
   <li>
-  <%= feedback.comment %>
-  Rating: <%= feedback.rating %>
-  <%= feedback.user.user_name %>
+  "<%= feedback.comment %>" by <%= feedback.user.user_name %>
   <% end %>
   </li>
   </ul>

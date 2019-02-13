@@ -7,4 +7,5 @@ class Sandwich < ApplicationRecord
   has_many :users, through: :user_feedbacks
 
   validates :name, presence: true, uniqueness: true
+
 end
