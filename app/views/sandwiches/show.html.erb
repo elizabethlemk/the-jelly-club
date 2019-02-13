@@ -1,8 +1,14 @@
 <h1><%= @sandwich.name %></h1>
 
+<!-- User Section -->
+<h6>Created by: <%= link_to @sandwich.user.user_name, user_path(@sandwich.user) %></h6>
+<% if current_user.id == @sandwich.user_id%>
+  <%= link_to "Edit", edit_sandwich_path %>
+  <%= link_to "Delete", sandwich_path, method: :delete %>
+<% end %>
+
+<!-- Bread Information -->
 <h3>Bread: <%= @sandwich.bread.name %></h3>
-
-
 
 <h3>Spread:</h3>
 <ul>
@@ -11,16 +17,13 @@
   <% end %>
 </ul>
 
-<% if current_user.id == @sandwich.user_id%>
-  <%= link_to "Edit", edit_sandwich_path %>
-  <%= link_to "Delete", sandwich_path, method: :delete %>
-<% end %>
-
+<!-- New Review Form -->
 <hr>
 <div>
   <%= render :partial => "user_feedbacks/new" %>
 </div>
 
+<!-- Show Reviews -->
 <div>
   <hr>
   <ul style="overflow-y: scroll; height:200px;">
@@ -34,7 +37,7 @@
   <hr>
 </div>
 
-
+<!-- Script For Star Rating -->
 <script>
   $('.review-rating').raty({
     readOnly: true,

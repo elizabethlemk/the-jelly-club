@@ -2,9 +2,10 @@ class UsersController < ApplicationController
   before_action :set_user!, only: [:show, :edit, :update, :destroy]
   before_action :authorized, except: [:new, :create]
 
+  def index
+  end
+
   def show
-    @current_user = User.find_by(id: session[:user_id])
-    render :show
   end
 
   def new
@@ -39,6 +40,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
+    session.delete :user_id
     redirect_to login_path
   end
 
