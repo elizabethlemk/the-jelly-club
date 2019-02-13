@@ -14,6 +14,9 @@ class UserFeedbacksController < ApplicationController
   def update
   end
   def destroy
+    @user = User.find(@user_feedback.user_id)
+    @user_feedback.destroy
+    redirect_to user_path(@user)
   end
 
   private
