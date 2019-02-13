@@ -10,6 +10,9 @@
 
 <%= link_to "Edit", edit_sandwich_path %>
 <div>
+  <%= render :partial => "user_feedbacks/new" %>
+</div>
+<div>
   <h3>Comments</h3>
   <hr>
   <ul style="overflow-y: scroll; height:200px;">
@@ -22,7 +25,4 @@
   </li>
   </ul>
   <hr>
-</div>
-<div>
-  <%= render :partial => "user_feedbacks/new" %>
 </div>
