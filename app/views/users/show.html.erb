@@ -52,6 +52,7 @@
           <% end %>
         <% end %>
       </ul>
+      <%= button_to "Clear All", favorite_path, method: :delete, data: {confirm: "Are you sure you want to clear all favorites?"}, class: "button" %>
     </div>
 
     <div class="tab-pane fade show " id="v-pills-comments" role="tabpanel" aria-labelledby="v-pills-comments-tab" style="overflow-y: scroll; height:400px;">

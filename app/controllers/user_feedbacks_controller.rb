@@ -17,6 +17,15 @@ class UserFeedbacksController < ApplicationController
     redirect_to sandwich_path(@sandwich_id)
   end
 
+  def favorite_destroy
+    @current_user.user_feedbacks.each do |feedback|
+      if feedback.comment == nil
+        feedback.destroy
+      end
+    end
+    redirect_to user_path(@current_user)
+  end
+
   def edit
   end
 
