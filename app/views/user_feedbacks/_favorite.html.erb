@@ -1,0 +1,31 @@
+<!--
+if they don't have a single user_feedback for that sandwich
+  then create feedback with a nil value
+elsif they do have one find it, render the form with "like" as submit button
+  patch => favorite AKA (update)
+  then when they submit set it to favorite = true
+else
+  render the form with "unlike" as submit button
+  sumbit the form with value false
+end
+-->
+
+
+<% @favorite = UserFeedback.find_by(user_id: @current_user.id, sandwich_id: @sandwich.id) %>
+<% if @favorite == nil %>
+  <% @favorite = UserFeedback.create(user_id: @current_user.id, sandwich_id: @sandwich.id) %>
+<% end %>
+
+<% if @favorite.favorite == nil || @favorite.favorite == false %>
+  <%= form_for @favorite, url:'/favorite', method: :patch do |f| %>
+      <%= f.hidden_field :sandwich_id, value: @sandwich.id %>
+      <%= f.hidden_field :favorite, value: true %>
+      <p><%= f.submit "Like" %></p>
+  <% end %>
+<% elsif @favorite.favorite == true %>
+  <%= form_for @favorite, url:'/favorite', method: :patch do |f| %>
+      <%= f.hidden_field :sandwich_id, value: @sandwich.id %>
+      <%= f.hidden_field :favorite, value: false %>
+      <p><%= f.submit "Unlike" %></p>
+  <% end %>
+<% end %>

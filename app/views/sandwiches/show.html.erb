@@ -1,5 +1,7 @@
 <h1><%= @sandwich.name %></h1>
-
+<div>
+<%= render :partial => "user_feedbacks/favorite" %>
+</div>
 <h3>Bread: <%= @sandwich.bread.name %></h3>
 
 
@@ -24,12 +26,14 @@
 <div>
   <hr>
   <ul style="overflow-y: scroll; height:200px;">
-  <% @feedback.each do |feedback| %>
-  <li>
-   <div class="review-rating" data-score = "<%= feedback.rating %>"></div>
-  "<%= feedback.comment %>" by <%= feedback.user.user_name %>
-  <% end %>
-  </li>
+    <% @feedback.each do |feedback| %>
+      <% if feedback.comment != nil %>
+        <li>
+           <div class="review-rating" data-score = "<%= feedback.rating %>"></div>
+           "<%= feedback.comment %>" by <%= feedback.user.user_name %>
+        </li>
+      <% end %>
+    <% end %>
   </ul>
   <hr>
 </div>

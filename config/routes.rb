@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   post '/sessions', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
+  patch '/favorite', to: 'user_feedbacks#favorite'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :breads
   resources :spreads

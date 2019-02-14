@@ -10,6 +10,13 @@ class UserFeedbacksController < ApplicationController
     redirect_to sandwich_path(@sandwich)
   end
 
+  def favorite
+    @sandwich_id = params[:user_feedback][:sandwich_id]
+    @favorite = UserFeedback.find_by(user_id: @current_user.id, sandwich_id: @sandwich_id)
+    @favorite.update(favorite: params[:user_feedback][:favorite])
+    redirect_to sandwich_path(@sandwich_id)
+  end
+
   def edit
   end
 
