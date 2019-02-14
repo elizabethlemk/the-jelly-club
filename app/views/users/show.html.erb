@@ -71,9 +71,6 @@
     </div>
 
     <div class="tab-pane fade show " id="v-pills-comments" role="tabpanel" aria-labelledby="v-pills-comments-tab" style="overflow-y: scroll; height:400px;">
-      <% if @user.user_feedbacks.blank? %>
-      <p>No reviews!</p>
-      <% end %>
       <ul>
         <% check = 0 %>
         <% @current_user.user_feedbacks.each do |feedback| %>
