@@ -40,7 +40,7 @@
       <% if feedback.comment != nil %>
         <li>
            <div class="review-rating" data-score = "<%= feedback.rating %>"></div>
-           "<%= feedback.comment %>" by <%= feedback.user.user_name %>
+           "<%= feedback.comment %>" by <%= link_to feedback.user.user_name, user_path(feedback.user) %>
         </li>
       <% end %>
     <% end %>

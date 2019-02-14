@@ -49,6 +49,16 @@ main h1, h2, h5 {
   letter-spacing: 6px;
 }
 
+main a:hover {
+  opacity: 100;
+  color: white;
+  background-color: #7e68ff;
+  text-decoration: none;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
 .navbar {
   position: relative;
 }
@@ -81,11 +91,30 @@ main h1, h2, h5 {
  color: white;
  background-color: #111;
 }
+.actions{
+  width: 220px;
+  border: 1px solid #dbdbdb;
 
+.nav-link{
+    font-size: 14px;
+    background-color: white;
+    color: black;
+    border-radius: 0;
+    padding: 12px 0 12px 30px;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  .nav-pills .nav-link.active{
+    border-left: 2px solid;
+    font-weight: 600;
+    background-color: #f96161;
+  }
+}
 
 .parallax {
   /* The image used */
-  background-image: url("https://assets.bonappetit.com/photos/5a999b79eb730726d6c7ea55/16:9/w_5120,c_limit/peanut_butter_and_jelly.jpg");
+  background: url("peanut_butter_and_jelly.jpg");
 
   /* Set a specific height */
   height: 300px;

@@ -14,23 +14,3 @@
     padding-top: 50px;
   }
 }
-
-.actions{
-  width: 220px;
-  border: 1px solid #dbdbdb;
-
-.nav-link{
-    font-size: 14px;
-    background-color: white;
-    color: black;
-    border-radius: 0;
-    padding: 12px 0 12px 30px;
-    &:hover{
-      cursor: pointer;
-    }
-  }
-  .nav-pills .nav-link.active{
-    border-left: 2px solid;
-    font-weight: 600;
-  }
-}
