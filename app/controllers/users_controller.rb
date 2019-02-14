@@ -29,7 +29,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    byebug
     @user.update(user_params)
     if @user.valid?
       redirect_to edit_user_path
