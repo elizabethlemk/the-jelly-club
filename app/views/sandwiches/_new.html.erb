@@ -28,6 +28,9 @@
     <%= f.label :delicious, "No", :value => "No" %>
     <%= f.radio_button :delicious, false %> </p>
 
+    <p><%= f.label :image, "Sandwich Image: " %>
+      <%= f.file_field :image %></p>
+
   <%= f.hidden_field :user_id, value: @current_user.id %>
   <p><%= f.submit %></p>
 <% end %>

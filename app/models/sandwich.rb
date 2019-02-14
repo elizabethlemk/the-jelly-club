@@ -6,6 +6,8 @@ class Sandwich < ApplicationRecord
   belongs_to :user
   has_many :users, through: :user_feedbacks
 
+  has_one_attached :image
+
   validates :name, presence: true, uniqueness: true
 
 end

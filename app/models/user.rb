@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :sandwiches, dependent: :destroy
   has_many :user_feedbacks, dependent: :destroy
 
+  has_one_attached :image
 
   validates :first_name, :last_name, :user_name, presence: true
   validates :first_name, :last_name, length: { minimum: 2 }
@@ -17,6 +18,5 @@ class User < ApplicationRecord
                        :length => {:within => 6..40},
                        :allow_blank => true,
                        :on => :update
-
 
 end

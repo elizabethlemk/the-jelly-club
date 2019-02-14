@@ -56,6 +56,6 @@ class SandwichesController < ApplicationController
   end
 
   def sandwich_params
-    params.require(:sandwich).permit(:name, :bread_id, :delicious, :user_id, :spread_ids => [])
+    params.require(:sandwich).permit(:name, :bread_id, :delicious, :user_id, :image, :spread_ids => [])
   end
 end
