@@ -1,5 +1,12 @@
 <h1><%= @user.user_name %></h1>
 
+<% if @current_user.image.attachment != nil %>
+  <%= image_tag current_user.image, class: 'main-image', :style => "border: 1px solid #ddd;
+    border-radius: 25%;
+    padding: 5px;
+    width: 150px;" %>
+<% end %>
+
 <div class="user-page">
   <div class="actions">
     <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
