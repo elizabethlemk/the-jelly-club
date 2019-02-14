@@ -67,6 +67,7 @@
           <% end %>
         <% end %>
       </ul>
+      <%= button_to "Clear All", comment_path, method: :delete, data: {confirm: "Are you sure you want to clear all comments?"}, class: "button" %>
     </div>
   </div>
 </div>
