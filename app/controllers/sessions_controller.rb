@@ -1,6 +1,10 @@
 class SessionsController < ApplicationController
+  def index
+    redirect_to "/login"
+  end
+
   def new
-    flash[:error] = nil
+    flash[:error] = []
   end
 
   def create
