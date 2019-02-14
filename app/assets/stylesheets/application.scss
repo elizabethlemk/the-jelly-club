@@ -35,10 +35,8 @@ main {
 
 footer {
   position: relative;
-  bottom: 0;
-  left: 0;
-  right: auto;
-  
+  text-align: center;
+
 }
 
 main h1, h2, h5 {
@@ -49,6 +47,10 @@ main h1, h2, h5 {
   font-family: sans-serif;
   text-transform: uppercase;
   letter-spacing: 6px;
+}
+
+.navbar {
+  position: relative;
 }
 
 .navbar a {
@@ -78,4 +80,19 @@ main h1, h2, h5 {
  opacity: 100;
  color: white;
  background-color: #111;
+}
+
+
+.parallax {
+  /* The image used */
+  background-image: url("https://assets.bonappetit.com/photos/5a999b79eb730726d6c7ea55/16:9/w_5120,c_limit/peanut_butter_and_jelly.jpg");
+
+  /* Set a specific height */
+  height: 300px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

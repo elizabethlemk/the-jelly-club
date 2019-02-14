@@ -1,18 +1,17 @@
 class BreadsController < ApplicationController
   before_action :set_breads!, only: [:show, :edit, :update, :destroy]
+  before_action :reset_flash, only: [:index, :show, :new, :edit]
+  before_action :set_index, only: [:index, :show, :new, :create]
   before_action :authorized
 
   def index
     @bread = Bread.new
-    @breads = Bread.all
   end
 
   def show
   end
 
   def new
-    flash[:error] = []
-    @breads = Bread.all
     @bread = Bread.new
   end
 
@@ -27,7 +26,6 @@ class BreadsController < ApplicationController
   end
 
   def edit
-    flash[:error] = []
   end
 
   def update
@@ -49,6 +47,14 @@ class BreadsController < ApplicationController
 
   def set_breads!
     @bread = Bread.find(params[:id])
+  end
+
+  def set_index
+    @breads = Bread.all
+  end
+  
+  def reset_flash
+    flash[:error] = []
   end
 
   def bread_params

@@ -1,9 +1,10 @@
 class SpreadsController < ApplicationController
   before_action :set_spreads!, only: [:show, :edit, :update, :destroy]
+  before_action :set_index, only: [:index, :show, :new, :create]
+  before_action :reset_flash, only: [:index, :show, :new, :edit]
   before_action :authorized
 
   def index
-    @spreads = Spread.all
     @spread = Spread.new
   end
 
@@ -11,8 +12,6 @@ class SpreadsController < ApplicationController
   end
 
   def new
-    flash[:error] = []
-    @spreads = Spread.all
     @spread = Spread.new
   end
 
@@ -27,7 +26,6 @@ class SpreadsController < ApplicationController
   end
 
   def edit
-    flash[:error] = []
   end
 
   def update
@@ -52,6 +50,14 @@ class SpreadsController < ApplicationController
     @spread = Spread.find(params[:id])
   end
 
+  def set_index
+    @spreads = Spread.all
+  end
+
+  def reset_flash
+    flash[:error] = []
+  end
+  
   def spread_params
     params.require(:spread).permit(:name)
   end

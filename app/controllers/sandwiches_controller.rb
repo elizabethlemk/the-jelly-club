@@ -1,10 +1,11 @@
 class SandwichesController < ApplicationController
   before_action :set_sandwiches!, only: [:show, :edit, :update, :destroy]
+  before_action :set_index, only: [:index, :new, :create]
+  before_action :reset_flash, only: [:index, :show, :new, :edit]
   before_action :authorized
 
   def index
     @sandwich = Sandwich.new
-    @sandwiches = Sandwich.all
   end
 
   def show
@@ -13,9 +14,7 @@ class SandwichesController < ApplicationController
   end
 
   def new
-    flash[:error] = []
     @sandwich = Sandwich.new
-    @sandwiches = Sandwich.all
     @user = User.find(session[:user_id])
   end
 
@@ -30,7 +29,6 @@ class SandwichesController < ApplicationController
   end
 
   def edit
-    flash[:error] = []
   end
 
   def update
@@ -53,6 +51,14 @@ class SandwichesController < ApplicationController
 
   def set_sandwiches!
     @sandwich = Sandwich.find(params[:id])
+  end
+
+  def set_index
+    @sandwiches = Sandwich.all
+  end
+
+  def reset_flash
+    flash[:error] = []
   end
 
   def sandwich_params
