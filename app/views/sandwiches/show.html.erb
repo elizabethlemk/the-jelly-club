@@ -2,27 +2,31 @@
 <div>
 <%= render :partial => "user_feedbacks/favorite" %>
 </div>
-<h3>Bread: <%= @sandwich.bread.name %></h3>
+<hr>
+<!-- User Section -->
+<% if current_user.id == @sandwich.user_id%>
+  <%= link_to "Edit", edit_sandwich_path %> | <%= link_to "Delete", sandwich_path, method: :delete %>
+<% end %>
+<h6>Created by: <%= link_to @sandwich.user.user_name, user_path(@sandwich.user) %></h6>
+<hr>
+<!-- Bread Information -->
+<h2>Bread:</h2>
+  <p><%= @sandwich.bread.name %></p>
 
-
-
-<h3>Spread:</h3>
+<h2>Spread:</h2>
 <ul>
 <% @sandwich.spreads.each do |spread| %>
   <li><%= spread.name %></li>
   <% end %>
 </ul>
 
-<% if current_user.id == @sandwich.user_id%>
-  <%= link_to "Edit", edit_sandwich_path %>
-  <%= link_to "Delete", sandwich_path, method: :delete %>
-<% end %>
-
+<!-- New Review Form -->
 <hr>
 <div>
   <%= render :partial => "user_feedbacks/new" %>
 </div>
 
+<!-- Show Reviews -->
 <div>
   <hr>
   <ul style="overflow-y: scroll; height:200px;">
@@ -38,7 +42,7 @@
   <hr>
 </div>
 
-
+<!-- Script For Star Rating -->
 <script>
   $('.review-rating').raty({
     readOnly: true,

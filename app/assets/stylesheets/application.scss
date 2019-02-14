@@ -15,6 +15,8 @@
  @import "bootstrap";
 @import "./user.scss";
 @import "./spread.scss";
+@import "./bread.scss";
+@import "./sandwich.scss";
 
 body ul {
    list-style: none;
@@ -37,6 +39,16 @@ footer {
   left: 38%;
   right: auto;
 
+}
+
+main h1, h2, h5 {
+  color: #111;
+  text-align: center;
+  text-decoration: none;
+  transform: all 5s;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 6px;
 }
 
 .navbar a {

@@ -2,7 +2,7 @@ class User < ApplicationRecord
   has_secure_password
 
   has_many :sandwiches, dependent: :destroy
-  has_many :user_feedbacks
+  has_many :user_feedbacks, dependent: :destroy
 
 
   validates :first_name, :last_name, :user_name, presence: true

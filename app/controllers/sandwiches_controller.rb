@@ -3,6 +3,7 @@ class SandwichesController < ApplicationController
   before_action :authorized
 
   def index
+    @sandwich = Sandwich.new
     @sandwiches = Sandwich.all
   end
 
@@ -14,6 +15,7 @@ class SandwichesController < ApplicationController
   def new
     flash[:error] = []
     @sandwich = Sandwich.new
+    @sandwiches = Sandwich.all
     @user = User.find(session[:user_id])
   end
 

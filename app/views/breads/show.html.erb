@@ -1,12 +1,36 @@
 <h1><%= @bread.name %></h1>
 
-<%= link_to "Edit", edit_bread_path %>
 
 
-<% if !@bread.sandwiches.blank? %>
-<h2>Featured in:</h2>
+<div class="spread-page">
+  <div class="actions">
+    <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
 
-<% @bread.sandwiches.each do |sandwich| %>
-<p><%= link_to sandwich.name, sandwich_path(sandwich) %></p>
-<% end %>
-<% end %>
+      <a class="nav-link active" data-toggle="pill" href="#v-pills-home" role="tab" aria-selected="true">Featured in Sandwiches</a>
+
+      <a class="nav-link" data-toggle="pill" href="#v-pills-edit" role="tab">Edit</a>
+      <a class="nav-link" data-toggle="pill" href="#v-pills-delete" role="tab">Back</a>
+    </div>
+  </div>
+  <div class="details tab-content">
+    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+      <% if @bread.sandwiches.blank? %>
+      <p>Not featured in any sandwiches</p>
+      <% else  %>
+      <ul>
+        <% @bread.sandwiches.each do |sandwich| %>
+        <li><%= link_to sandwich.name, sandwich_path(sandwich) %></li>
+        <% end %>
+      </ul>
+      <% end %>
+    </div>
+
+    <div class="tab-pane fade show " id="v-pills-edit" role="tabpanel" aria-labelledby="v-pills-edit-tab">
+      <%= render :partial => "breads/edit" %>
+    </div>
+
+    <div class="tab-pane fade show " id="v-pills-delete" role="tabpanel" aria-labelledby="v-pills-delete-tab">
+
+    </div>
+  </div>
+</div>
