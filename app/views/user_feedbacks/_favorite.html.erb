@@ -19,7 +19,16 @@ Any comments made will never be touched
 and will not refer to this favorite.
   -->
 
-<% @favorite = UserFeedback.find_by(user_id: @current_user.id, sandwich_id: @sandwich.id) %>
+  <!-- to improve and make it better and add validations for commments
+    remove favorites from the user_feeback model and make a seperate
+    model where user has many favorite and sandwich has many Favorites
+    and favorites belongs to user and sandwich. that will fix alot of issues
+     and allow for further development with ease.
+     Right now we allow for empty comments to accomodate the favorite
+     and that can cause issues
+     -->
+
+<% @favorite = UserFeedback.find_by(user_id: @current_user.id, sandwich_id: @sandwich.id, comment: nil) %>
   <% if @favorite == nil %>
     <% @favorite = UserFeedback.create(user_id: @current_user.id, sandwich_id: @sandwich.id) %>
 <% end %>
