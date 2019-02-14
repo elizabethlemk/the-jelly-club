@@ -41,6 +41,16 @@ footer {
 
 }
 
+main h1, h2, h5 {
+  color: #111;
+  text-align: center;
+  text-decoration: none;
+  transform: all 5s;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+}
+
 .navbar a {
   font-family: sans-serif;
   text-transform: uppercase;

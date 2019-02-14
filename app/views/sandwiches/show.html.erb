@@ -1,15 +1,16 @@
 <h1><%= @sandwich.name %></h1>
-
+<hr>
 <!-- User Section -->
-<h6>Created by: <%= link_to @sandwich.user.user_name, user_path(@sandwich.user) %></h6>
 <% if current_user.id == @sandwich.user_id%>
   <%= link_to "Edit", edit_sandwich_path %> | <%= link_to "Delete", sandwich_path, method: :delete %>
 <% end %>
-
+<h6>Created by: <%= link_to @sandwich.user.user_name, user_path(@sandwich.user) %></h6>
+<hr>
 <!-- Bread Information -->
-<h3>Bread: <%= @sandwich.bread.name %></h3>
+<h2>Bread:</h2>
+  <p><%= @sandwich.bread.name %></p>
 
-<h3>Spread:</h3>
+<h2>Spread:</h2>
 <ul>
 <% @sandwich.spreads.each do |spread| %>
   <li><%= spread.name %></li>

@@ -1,4 +1,4 @@
-<h1>Add New Spread</h1>
+
 <% if flash[:error] %>
   <% flash[:error].each do |error| %>
     <li style=" color: red;"><%= error %></li>
@@ -6,8 +6,9 @@
 <% end %>
 
 <%= form_for @spread do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <p><%= f.label :name %>
+  <%= f.text_field :name %></p>
 
-  <%= f.submit %>
+  <p><%= f.submit %></p>
+
 <% end %>

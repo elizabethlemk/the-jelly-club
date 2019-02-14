@@ -11,7 +11,7 @@
   <div class="details tab-content">
     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
       <div class="good">
-        <h5>Good:</h5>
+        <h5>Delicious Sandwiches:</h5>
           <ul>
             <% good = [] %>
           <% @user.sandwiches.each do |sandwich| %>
@@ -30,9 +30,9 @@
           <% end %>
         </ul>
       </div>
-
+      <hr>
       <div class="bad">
-        <h5>Bad:</h5>
+        <h5>Not Delicious Sandwiches:</h5>
           <ul>
             <% bad = [] %>
           <% @user.sandwiches.each do |sandwich| %>
