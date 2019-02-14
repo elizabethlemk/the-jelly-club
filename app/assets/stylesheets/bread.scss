@@ -34,28 +34,3 @@
     font-weight: 600;
   }
 }
-
-input[type=button], input[type=submit], input[type=reset] {
- display:inline-block;
- padding:0.5em 3em;
- border:0.16em solid #FFFFFF;
- margin:0 0.3em 0.3em 0;
- box-sizing: border-box;
- text-decoration:none;
- text-transform:uppercase;
- font-family:'Roboto',sans-serif;
- font-weight:400;
- color:#FFFFFF;
- text-align:center;
- transition: all 0.15s;
-}
-
-input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover{
- color:#DDDDDD;
- border-color:#DDDDDD;
-}
-
-input[type=button]:active, input[type=submit]:active, input[type=reset]:active{
- color:#BBBBBB;
- border-color:#BBBBBB;
-}
