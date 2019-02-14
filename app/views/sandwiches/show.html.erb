@@ -1,7 +1,13 @@
 <h1><%= @sandwich.name %></h1>
+
+
+<!-- Like Button -->
 <div>
 <%= render :partial => "user_feedbacks/favorite" %>
 </div>
+
+
+<!-- Sandwich Image -->
 <% if @sandwich.image.attachment != nil %>
   <%= image_tag @sandwich.image, class: 'main-image', :style => "border: 1px solid #ddd;
     border-radius: 25%;
@@ -9,12 +15,16 @@
     width: 150px;" %>
 <% end %>
 <hr>
+
+
 <!-- User Section -->
 <% if current_user.id == @sandwich.user_id%>
   <%= link_to "Edit", edit_sandwich_path %> | <%= link_to "Delete", sandwich_path, method: :delete %>
 <% end %>
 <h6>Created by: <%= link_to @sandwich.user.user_name, user_path(@sandwich.user) %></h6>
 <hr>
+
+
 <!-- Bread Information -->
 <h2>Bread:</h2>
   <p><%= @sandwich.bread.name %></p>

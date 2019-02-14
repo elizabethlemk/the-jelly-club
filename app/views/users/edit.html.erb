@@ -39,7 +39,7 @@
         <p><%= f.label :image, "Profile Image: " %>
           <%= f.file_field :image %></p>
 
-        <p><%= f.submit "Update" %></p>
+        <p><%= f.submit "Update", class: "button" %></p>
 
       <% end %>
     </div>
@@ -53,7 +53,7 @@
       <p><%= f.label :password_confirmation, "Re-type Password" %>
       <%= f.password_field :password_confirmation %></p>
 
-      <p><%= f.submit "Update" %></p>
+      <p><%= f.submit "Update", class: "button" %></p>
       <% end %>
     </div>
 

@@ -17,6 +17,7 @@
 @import "./spread.scss";
 @import "./bread.scss";
 @import "./sandwich.scss";
+@import "./_animation.css";
 
 body ul {
    list-style: none;
@@ -37,6 +38,11 @@ footer {
   position: relative;
   text-align: center;
 
+}
+main h1 {
+  background: -webkit-linear-gradient(gold, #ff6633);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 main h1, h2, h5 {
@@ -114,7 +120,7 @@ main a:hover {
 
 .parallax {
   /* The image used */
-  background: url("peanut_butter_and_jelly.jpg");
+  background-image: url("https://assets.bonappetit.com/photos/5a999b79eb730726d6c7ea55/16:9/w_5120,c_limit/peanut_butter_and_jelly.jpg");
 
   /* Set a specific height */
   height: 300px;
@@ -124,4 +130,26 @@ main a:hover {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.button {
+	background-color:transparent;
+	border:2px solid gold;
+	display:inline-block;
+	cursor:pointer;
+	color:gold;
+	font-family:sans-serif;
+	font-size:17px;
+	padding:7px 23px;
+  text-align:center;
+	text-decoration:none;
+}
+.button:hover {
+  color:white;
+  background-color:gold;
+  text-transform:uppercase;
+}
+.button:active {
+	position:relative;
+	top:1px;
 }
