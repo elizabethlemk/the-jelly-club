@@ -125,3 +125,24 @@ main a:hover {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.heart {
+  background-color: red;
+  height: 30px;
+  transform: rotate(-45deg);
+  width: 30px;
+}
+.heart:before {
+  top: -15px;
+  left: 0;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  background-color: red;
+  border-radius: 50%;
+  height: 30px;
+  position: absolute;
+  width: 30px;
+}

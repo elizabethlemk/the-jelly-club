@@ -37,7 +37,7 @@ and will not refer to this favorite.
   <%= form_for @favorite, url:'/favorite', method: :patch do |f| %>
       <%= f.hidden_field :sandwich_id, value: @sandwich.id %>
       <%= f.hidden_field :favorite, value: true %>
-      <p><%= f.submit "Like" %></p>
+      <p><%= f.submit "Like", :class => 'heart' %></p>
   <% end %>
 <% elsif @favorite.favorite == true %>
   <%= form_for @favorite, url:'/favorite', method: :patch do |f| %>
