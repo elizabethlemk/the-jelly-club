@@ -3,12 +3,9 @@
 
 <!-- Like Button -->
 
-<% pre_like = @sandwich.likes.find { |like| like.user_id == current_user.id} %>
-<% if pre_like %>
-  <%= button_to 'Unlike', sandwich_like_path(@sandwich), method: :delete %>
-<% else %>
-  <%= button_to 'Like', sandwich_likes_path(@sandwich), method: :post %>
-<% end %>
+<div>
+  <%= render :partial => "likes/button" %>
+</div>
 
 <p><%= @sandwich.likes.count %> <%= (@sandwich.likes.count) == 1 ? 'Like' : 'Likes'%></p>
 

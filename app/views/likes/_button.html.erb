@@ -1,0 +1,6 @@
+<% pre_like = @sandwich.likes.find { |like| like.user_id == current_user.id} %>
+<% if pre_like %>
+  <%= button_to 'Unlike', sandwich_like_path(@sandwich), method: :delete, class: "heart"%>
+<% else %>
+  <%= button_to 'Like', sandwich_likes_path(@sandwich), method: :post, class: "heart" %>
+<% end %>
