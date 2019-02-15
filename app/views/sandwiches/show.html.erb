@@ -1,6 +1,7 @@
 <h1><%= @sandwich.name %></h1>
 <div>
 <%= render :partial => "user_feedbacks/favorite" %>
+<br>
 </div>
 <% if @sandwich.image.attachment != nil %>
   <%= image_tag @sandwich.image, class: 'main-image', :style => "border: 1px solid #ddd;
