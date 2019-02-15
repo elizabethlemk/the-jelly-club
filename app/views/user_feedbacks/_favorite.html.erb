@@ -27,6 +27,10 @@ and will not refer to this favorite.
      Right now we allow for empty comments to accomodate the favorite
      and that can cause issues
      -->
+<!--
+liked heart: https://img.icons8.com/color/48/000000/novel.png
+not liked heart: https://img.icons8.com/ios/48/000000/hearts.png
+  -->
 
 <% @favorite = UserFeedback.find_by(user_id: @current_user.id, sandwich_id: @sandwich.id, comment: nil) %>
   <% if @favorite == nil %>
@@ -37,12 +41,12 @@ and will not refer to this favorite.
   <%= form_for @favorite, url:'/favorite', method: :patch do |f| %>
       <%= f.hidden_field :sandwich_id, value: @sandwich.id %>
       <%= f.hidden_field :favorite, value: true %>
-      <p><%= f.submit "Like" %></p>
+      <%= image_submit_tag("emptyheart.png") %>
   <% end %>
 <% elsif @favorite.favorite == true %>
   <%= form_for @favorite, url:'/favorite', method: :patch do |f| %>
       <%= f.hidden_field :sandwich_id, value: @sandwich.id %>
       <%= f.hidden_field :favorite, value: false %>
-      <p><%= f.submit "Unlike" %></p>
+      <%= image_submit_tag("likeheart.png") %>
   <% end %>
 <% end %>
