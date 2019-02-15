@@ -2,10 +2,12 @@
 
 
 <!-- Like Button -->
+
 <div>
-<%= render :partial => "user_feedbacks/favorite" %>
+  <%= render :partial => "likes/button" %>
 </div>
 
+<p><%= @sandwich.likes.count %> <%= (@sandwich.likes.count) == 1 ? 'Like' : 'Likes'%></p>
 
 <!-- Sandwich Image -->
 <% if @sandwich.image.attachment != nil %>
