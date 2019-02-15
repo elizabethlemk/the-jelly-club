@@ -28,6 +28,6 @@ class LikesController < ApplicationController
  end
 
  def find_like
-   @like = @sandwich.likes.find_by(user_id: params[:id])
+   @like = @sandwich.likes.find(params[:sandwich_id])
 end
 end
