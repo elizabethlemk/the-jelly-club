@@ -3,12 +3,11 @@
 <h1>Hello, <%= @current_user.first_name %> <%= @current_user.last_name %></h1>
 
 <% if @current_user.image.attachment != nil %>
-  <%= image_tag current_user.image, class: 'main-image', :style => "border: 1px solid #ddd;
+  <%= link_to image_tag(current_user.image, class: 'main-image', :style => "border: 1px solid #ddd;
     border-radius: 25%;
     padding: 5px;
-    width: 150px;" %>
-<% end %>
-
+    width: 150px;"), user_path(@user) %>
+  <% end %>  
 
 <div class="user-edit-page">
 <!-- Tabs -->
@@ -39,11 +38,17 @@
         <p><%= f.label :last_name %>
         <%= f.text_field :last_name %></p>
 
-        <p><%= f.label :user_name %>
-        <%= f.text_field :user_name %></p>
-
         <p><%= f.label :image, "Profile Image: " %>
           <%= f.file_field :image %></p>
+
+        <p><%= f.label :location %>
+        <%= f.text_field :location %></p>
+
+        <p><%= f.label :birthday %>
+        <%= f.date_field :birthday %></p>
+
+        <p><%= f.label :bio, "About me" %>
+        <%= f.text_area :bio %></p>
 
         <p><%= f.submit "Update", class: "button" %></p>
 

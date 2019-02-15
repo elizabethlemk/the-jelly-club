@@ -3,13 +3,11 @@ class LikesController < ApplicationController
   before_action :find_like, only: [:destroy]
 
  def create
-   byebug
    @sandwich.likes.create(user_id: current_user.id)
    redirect_to sandwich_path(@sandwich)
  end
 
  def destroy
-   byebug
    @like.destroy
    redirect_to sandwich_path(@sandwich)
  end

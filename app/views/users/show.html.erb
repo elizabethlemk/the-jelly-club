@@ -4,17 +4,18 @@
 
 <!-- Profile Picture -->
 <% if @current_user.image.attachment != nil %>
-  <%= image_tag current_user.image, class: 'main-image', :style => "border: 1px solid #ddd;
+  <%= link_to image_tag(current_user.image, class: 'main-image', :style => "border: 1px solid #ddd;
     border-radius: 25%;
     padding: 5px;
-    width: 150px;" %>
+    width: 150px;"), user_path(@user) %>
 <% end %>
 
 <div class="user-page">
 <!-- Tabs -->
   <div class="actions">
     <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
-      <a class="nav-link active" data-toggle="pill" href="#v-pills-home" role="tab" aria-selected="true">Sandwiches</a>
+      <a class="nav-link active" data-toggle="pill" href="#v-pills-home" role="tab" aria-selected="true">About</a>
+      <a class="nav-link" data-toggle="pill" href="#v-pills-sandwich" role="tab" >Sandwiches</a>
       <a class="nav-link" data-toggle="pill" href="#v-pills-favorites" role="tab">Favorites</a>
       <a class="nav-link" data-toggle="pill" href="#v-pills-comments" role="tab">Reviews</a>
     </div>
@@ -22,8 +23,16 @@
 <!-- Content -->
   <div class="details tab-content">
 
+<!-- User's About Me -->
+  <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+    <h3><%= @user.first_name %> <%= @user.last_name %></h3>
+    <h6>Location: <%= @user.location %></h6>
+    <h6>Birthday: <%= @user.birthday.strftime("%m/%d/%Y") %></h6>
+    <p><%= @user.bio %></p>
+  </div>
+
 <!-- User's Sandwiches -->
-    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+    <div class="tab-pane fade show" id="v-pills-sandwich" role="tabpanel" aria-labelledby="v-pills-sandwich-tab">
       <div class="good">
         <h5>Delicious Sandwiches:</h5>
           <ul>
