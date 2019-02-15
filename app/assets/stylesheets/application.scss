@@ -57,8 +57,9 @@ main h1, h2, h5 {
 
 main a:hover {
   opacity: 100;
-  color: white;
-  background-color: #7e68ff;
+  color: red;
+  // will bring back when we can figure out how to turn off hover for a like.
+  // background-color: #7e68ff;
   text-decoration: none;
   font-family: sans-serif;
   text-transform: uppercase;
@@ -152,4 +153,12 @@ main a:hover {
 .button:active {
 	position:relative;
 	top:1px;
+}
+
+.heart a img:hover {
+
+opacity:1.0;
+
+box-shadow:none;
+
 }
