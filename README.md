@@ -8,8 +8,11 @@ You can add any breads or spreads so members (and yourself) can make sandwiches.
 
 ![alt text](https://github.com/elizabethlemk/the-jelly-club/blob/master/app/assets/images/Screen%20Shot%202019-02-15%20at%2012.46.55%20PM.png)
  
-  ![alt text](https://github.com/elizabethlemk/the-jelly-club/blob/master/app/assets/images/Screen%20Shot%202019-02-15%20at%2012.49.17%20PM.png)
+ ![alt text](https://github.com/elizabethlemk/the-jelly-club/blob/master/app/assets/images/Screen%20Shot%202019-02-15%20at%2012.49.17%20PM.png)
  
- ![alt text](https://github.com/elizabethlemk/the-jelly-club/blob/master/app/assets/images/Screen%20Shot%202019-02-15%20at%2012.48.54%20PM.png)
+You can edit your bio, upload a profile picture, or view your sandwiches, likes, or reviews.
  
   ![alt text](https://github.com/elizabethlemk/the-jelly-club/blob/master/app/assets/images/Screen%20Shot%202019-02-15%20at%2012.49.43%20PM.png)
+
+
+ ![alt text](https://github.com/elizabethlemk/the-jelly-club/blob/master/app/assets/images/Screen%20Shot%202019-02-15%20at%2012.48.54%20PM.png)
