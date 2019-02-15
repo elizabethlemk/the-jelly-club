@@ -1,24 +1,3 @@
-# README
+The Jelly Club
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Welcome to The Jelly Club! This is a website for this elite club at the Flatiron School. You can add any breads or spreads so members (and yourself) can make sandwiches. You can log all the sandwiches you made so you remember which combination was the best or worst. Every creation can be reviewed, or you can just like it. 
