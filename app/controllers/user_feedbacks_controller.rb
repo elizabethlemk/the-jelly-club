@@ -13,6 +13,7 @@ class UserFeedbacksController < ApplicationController
     if @user_feedback.valid?
       redirect_to sandwich_path(@sandwich)
     else
+# Flash error is not working. It doesn't show on the sandwich page
       flash.now[:error] = "Comment couldn't be created. Please check the errors."
       redirect_to sandwich_path(@sandwich)
     end
@@ -48,6 +49,7 @@ class UserFeedbacksController < ApplicationController
     redirect_to user_path(@user)
   end
 
+# Private helper methods
   private
 
   def set_user_feedback!

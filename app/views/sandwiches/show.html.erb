@@ -1,3 +1,5 @@
+<!-- Sandwich Show Page -->
+
 <h1><%= @sandwich.name %></h1>
 
 
@@ -18,14 +20,12 @@
 <% end %>
 <hr>
 
-
 <!-- User Section -->
 <% if current_user.id == @sandwich.user_id%>
   <%= link_to "Edit", edit_sandwich_path %> | <%= link_to "Delete", sandwich_path, method: :delete %>
 <% end %>
 <h6>Created by: <%= link_to @sandwich.user.user_name, user_path(@sandwich.user) %></h6>
 <hr>
-
 
 <!-- Bread Information -->
 <h2>Bread:</h2>
@@ -54,13 +54,15 @@
            <div class="review-rating" data-score = "<%= feedback.rating %>"></div>
            "<%= feedback.comment %>" by <%= link_to feedback.user.user_name, user_path(feedback.user) %>
         </li>
+      <% elsif @feedback.nil? %>
+        <p>No reviews to show. Be the first to leave a review!</p>
       <% end %>
     <% end %>
   </ul>
   <hr>
 </div>
 
-<!-- Script For Star Rating -->
+<!-- JS Script for Raty -->
 <script>
   $('.review-rating').raty({
     readOnly: true,

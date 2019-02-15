@@ -1,11 +1,13 @@
 <h1>Edit Comment:</h1>
 
+<!-- Shows any error messages -->
 <% if flash[:error] %>
   <% flash[:error].each do |error| %>
     <li style=" color: red;"><%= error %></li>
     <% end %>
 <% end %>
 
+<!-- Edit Review Form -->
 <%= form_for @user_feedback do |f| %>
 
   <div id="rating-form">
@@ -19,6 +21,8 @@
 
 <% end %>
 
+
+<!-- JS script for Raty -->
 <script>
   $('#rating-form').raty({
     path: '/assets/',

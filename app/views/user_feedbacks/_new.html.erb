@@ -1,11 +1,14 @@
 <h1>Add Review</h1>
 
+<!-- Shows any error messages -->
 <% if flash[:error] %>
   <% flash[:error].each do |error| %>
     <li style=" color: red;"><%= error %></li>
     <% end %>
 <% end %>
 
+
+<!-- New Review Form -->
 <%= form_for @user_feedback do |f| %>
 
   <%= f.hidden_field :user_id, value: @current_user.id %>
@@ -22,6 +25,7 @@
 
 <% end %>
 
+<!-- JS script for Raty -->
 <script>
   $('#rating-form').raty({
     path: '/assets/',

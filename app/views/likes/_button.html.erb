@@ -1,9 +1,7 @@
-<!--
-liked heart: https://img.icons8.com/color/48/000000/novel.png
-not liked heart: https://img.icons8.com/ios/48/000000/hearts.png
-  -->
-
+<!-- Logic for Like/Unlike Button -->
 <% pre_like = @sandwich.likes.find { |like| like.user_id == current_user.id} %>
+
+
 <% if pre_like %>
   <%= link_to image_tag("likeheart.png"), sandwich_like_path(@sandwich), method: :delete, class: "heart" %>
 <% else %>

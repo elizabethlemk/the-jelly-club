@@ -1,9 +1,12 @@
 <h1>Log in:</h1>
 
+<!-- Shows any error messages -->
 <% if flash[:error] %>
   <li style=" color: red;"><%= flash[:error] %></li>
 <% end %>
 
+
+<!-- Login Form -->
 <%= form_tag "/sessions" do %>
   <label for="user_name">Username:</label>
   <%= text_field_tag :user_name %>

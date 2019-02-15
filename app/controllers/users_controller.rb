@@ -41,9 +41,10 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     session.delete :user_id
-    redirect_to login_path
+    redirect_to '/'
   end
 
+# Private helper methods
   private
 
   def user_params

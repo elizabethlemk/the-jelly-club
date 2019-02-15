@@ -1,10 +1,12 @@
-
+<!-- Shows any error messages -->
 <% if flash[:error] %>
   <% flash[:error].each do |error| %>
     <li style=" color: red;"><%= error %></li>
     <% end %>
 <% end %>
 
+
+<!-- New Spread Form -->
 <%= form_for @spread do |f| %>
   <p><%= f.label :name %>
   <%= f.text_field :name %></p>

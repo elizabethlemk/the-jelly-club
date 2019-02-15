@@ -1,11 +1,13 @@
 <h1>Edit a Sandwich:</h1>
 
+<!-- Shows any error messages -->
 <% if flash[:error] %>
   <% flash[:error].each do |error| %>
     <li style=" color: red;"><%= error %></li>
     <% end %>
 <% end %>
 
+<!-- Edit Sandwich Form -->
 <%= form_for @sandwich do |f| %>
 
   <p><%= f.label :name, "Name:" %>

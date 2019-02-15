@@ -1,6 +1,8 @@
+<!-- User's Home Page -->
 <h1>Hello, <%= @current_user.first_name %> <%= @current_user.last_name %></h1>
 
 <div class="user-page">
+<!-- Tabs -->
   <div class="actions">
     <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
       <a class="nav-link active" data-toggle="pill" href="#v-pills-home" role="tab" aria-selected="true">Your Sandwiches</a>
@@ -8,7 +10,11 @@
       <a class="nav-link" data-toggle="pill" href="#v-pills-comments" role="tab">Reviews</a>
     </div>
   </div>
+
+<!-- Content -->
   <div class="details tab-content">
+
+<!-- Your Sandwiches -->
     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
       <div class="good">
         <h5>Delicious Sandwiches:</h5>
@@ -49,6 +55,7 @@
       </div>
     </div>
 
+<!-- Your Favorites -->
     <div class="tab-pane fade show " id="v-pills-favorites" role="tabpanel" aria-labelledby="v-pills-favorites-tab">
       <ul>
         <% check = 0 %>
@@ -66,6 +73,7 @@
       <% end %>
     </div>
 
+<!-- Your Comments -->
     <div class="tab-pane fade show " id="v-pills-comments" role="tabpanel" aria-labelledby="v-pills-comments-tab" style="overflow-y: scroll; height:400px;">
       <ul>
         <% check = 0 %>
@@ -90,6 +98,8 @@
   </div>
 </div>
 
+
+<!-- JS Script for Raty -->
 <script>
   $('.review-rating').raty({
     readOnly: true,

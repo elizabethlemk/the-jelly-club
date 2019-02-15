@@ -47,6 +47,7 @@ class SandwichesController < ApplicationController
     redirect_to sandwiches_path
   end
 
+# Private helper methods
   private
 
   def set_sandwiches!

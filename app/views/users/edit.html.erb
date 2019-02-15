@@ -1,5 +1,5 @@
 
-
+<!-- User Information -->
 <h1>Hello, <%= @current_user.first_name %> <%= @current_user.last_name %></h1>
 
 <% if @current_user.image.attachment != nil %>
@@ -11,20 +11,26 @@
 
 
 <div class="user-edit-page">
+<!-- Tabs -->
   <div class="actions">
     <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
       <a class="nav-link active" data-toggle="pill" href="#v-pills-home" role="tab" aria-selected="true">Edit Profile</a>
       <a class="nav-link" data-toggle="pill" href="#v-pills-password" role="tab">Change Password</a>
       <a class="nav-link" data-toggle="pill" href="#v-pills-delete" role="tab">Delete Account</a>
-
     </div>
   </div>
+
+<!-- Content -->
   <div class="details tab-content">
+
+<!-- Shows any error messages -->
     <% if flash[:error] %>
       <% flash[:error].each do |error| %>
         <li style=" color: red;"><%= error %></li>
         <% end %>
     <% end %>
+
+<!-- Edit Form -->
     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
       <%= form_for @user do |f| %>
         <p><%= f.label :first_name %>
@@ -44,6 +50,7 @@
       <% end %>
     </div>
 
+<!-- Edit Password -->
     <div class="tab-pane fade show " id="v-pills-password" role="tabpanel" aria-labelledby="v-pills-password-tab">
       <%= form_for @user do |f| %>
 
@@ -57,6 +64,7 @@
       <% end %>
     </div>
 
+<!-- Delete Account -->
     <div class="tab-pane fade show " id="v-pills-delete" role="tabpanel" aria-labelledby="v-pills-delete-tab">
       <h5>Permanently Delete Account</h5>
       <p>If you want to permanently delete your account, let us know.

@@ -1,11 +1,13 @@
 <h1>Create an Account:</h1>
 
+<!-- Shows any error messages -->
 <% if flash[:error] %>
   <% flash[:error].each do |error| %>
     <li style=" color: red;"><%= error %></li>
     <% end %>
 <% end %>
 
+<!-- Form for New User Account -->
 <%= form_for @user do |f| %>
   <p><%= f.label :first_name %>
     <%= f.text_field :first_name %></p>

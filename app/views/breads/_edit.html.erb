@@ -1,10 +1,11 @@
-
+<!-- Shows any error messages -->
 <% if flash[:error] %>
   <% flash[:error].each do |error| %>
     <li style=" color: red;"><%= error %></li>
     <% end %>
 <% end %>
 
+<!-- Edit Bread Form -->
 <%= form_for @bread do |f| %>
   <p><%= f.label :name %>
   <%= f.text_field :name %></p>

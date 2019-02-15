@@ -1,4 +1,5 @@
 class Sandwich < ApplicationRecord
+# Model Relationships
   has_many :user_feedbacks
   belongs_to :user
   has_many :users, through: :user_feedbacks
@@ -10,7 +11,7 @@ class Sandwich < ApplicationRecord
 
   has_one_attached :image
 
-
+# Validation/ Error Messages
   validates :name, presence: true, uniqueness: true
 
 end

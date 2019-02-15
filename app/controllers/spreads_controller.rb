@@ -44,6 +44,7 @@ class SpreadsController < ApplicationController
     redirect_to spreads_path
   end
 
+# Private helper methods
   private
 
   def set_spreads!
@@ -57,7 +58,7 @@ class SpreadsController < ApplicationController
   def reset_flash
     flash[:error] = []
   end
-  
+
   def spread_params
     params.require(:spread).permit(:name)
   end

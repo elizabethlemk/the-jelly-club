@@ -43,6 +43,8 @@ class BreadsController < ApplicationController
     redirect_to breads_path
   end
 
+
+# Private helper methods
   private
 
   def set_breads!
@@ -52,7 +54,7 @@ class BreadsController < ApplicationController
   def set_index
     @breads = Bread.all
   end
-  
+
   def reset_flash
     flash[:error] = []
   end

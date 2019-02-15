@@ -1,7 +1,9 @@
+<!-- Spread Show Page -->
 <h1><%= @spread.name %></h1>
 
 
 <div class="spread-page">
+<!-- Tabs -->
   <div class="actions">
     <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
 
@@ -10,7 +12,11 @@
       <a class="nav-link" data-toggle="pill" href="#v-pills-edit" role="tab">Edit</a>
     </div>
   </div>
+
+<!-- Content -->
   <div class="details tab-content">
+
+<!-- Spread Profile -->
     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
       <% if @spread.sandwiches.blank? %>
       <p>Not featured in any sandwiches</p>
@@ -23,8 +29,10 @@
       <% end %>
     </div>
 
+<!-- Spread Edit Form -->
     <div class="tab-pane fade show " id="v-pills-edit" role="tabpanel" aria-labelledby="v-pills-edit-tab">
       <%= render :partial => "spreads/edit" %>
     </div>
+
   </div>
 </div>

@@ -19,6 +19,7 @@
 @import "./sandwich.scss";
 @import "./_animation.css";
 
+// Main Body Styling
 body ul {
    list-style: none;
    margin: 0;
@@ -66,6 +67,7 @@ main a:hover {
   letter-spacing: 2px;
 }
 
+// Nav Bar Styling
 .navbar {
   position: relative;
 }
@@ -98,6 +100,8 @@ main a:hover {
  color: white;
  background-color: #111;
 }
+
+// Tabs Styling
 .actions{
   width: 220px;
   border: 1px solid #dbdbdb;
@@ -119,6 +123,7 @@ main a:hover {
   }
 }
 
+// Parallax Image Banner
 .parallax {
   /* The image used */
   background-image: url("https://assets.bonappetit.com/photos/5a999b79eb730726d6c7ea55/16:9/w_5120,c_limit/peanut_butter_and_jelly.jpg");
@@ -133,6 +138,7 @@ main a:hover {
   background-size: cover;
 }
 
+// Adds a Hover on Buttons
 .button {
 	background-color:transparent;
 	border:2px solid gold;
@@ -155,6 +161,7 @@ main a:hover {
 	top:1px;
 }
 
+// Removes hover on Heart Button
 .heart a img:hover {
 
 opacity:1.0;

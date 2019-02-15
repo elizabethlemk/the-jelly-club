@@ -1,13 +1,19 @@
 <h1>Breads</h1>
 
 <div class="bread-page">
+
+<!-- Tabs -->
   <div class="actions">
     <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
       <a class="nav-link" data-toggle="pill" href="#v-pills-home" role="tab" >All Breads</a>
       <a class="nav-link active" data-toggle="pill" href="#v-pills-new" role="tab" aria-selected="true">New Bread</a>
     </div>
   </div>
+
+<!-- Content -->
   <div class="details tab-content">
+
+<!-- All Breads -->
     <div class="tab-pane fade show" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
 
       <h1>List of Breads:</h1>
@@ -18,6 +24,7 @@
       </ul>
     </div>
 
+<!-- New Bread Form -->
     <div class="tab-pane fade show active" id="v-pills-new" role="tabpanel" aria-labelledby="v-pills-new-tab">
       <%= render :partial => "breads/new" %>
     </div>

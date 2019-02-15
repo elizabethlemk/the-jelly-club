@@ -21,6 +21,8 @@ class LikesController < ApplicationController
    redirect_to users_path
  end
 
+
+# Private helper methods
  private
 
  def find_sandwich
@@ -28,6 +30,6 @@ class LikesController < ApplicationController
  end
 
  def find_like
-   @like = @sandwich.likes.find(params[:sandwich_id])
+   @like = @sandwich.likes.find_by(sandwich_id: params[:sandwich_id])
 end
 end
