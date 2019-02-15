@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-#For Password Encryption 
+#For Password Encryption
   has_secure_password
 
 # Model Relationships
@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :sandwiches, dependent: :destroy
   has_many :user_feedbacks, dependent: :destroy
 
-  has_one_attached :image
+  has_one_attached :image, dependent: :destroy
 
 # Validations/Error Messages
   validates :first_name, :last_name, :user_name, presence: true

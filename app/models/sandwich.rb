@@ -9,7 +9,7 @@ class Sandwich < ApplicationRecord
   has_many :spreads, through: :sandwich_spreads
   belongs_to :bread
 
-  has_one_attached :image
+  has_one_attached :image, dependent: :destroy
 
 # Validation/ Error Messages
   validates :name, presence: true, uniqueness: true
