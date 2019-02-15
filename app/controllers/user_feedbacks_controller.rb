@@ -57,6 +57,6 @@ class UserFeedbacksController < ApplicationController
   end
 
   def user_feedback_params
-    params.require(:user_feedback).permit(:user_id, :sandwich_id, :rating, :comment, :favorite)
+    params.require(:user_feedback).permit(:user_id, :sandwich_id, :rating, :comment)
   end
 end
