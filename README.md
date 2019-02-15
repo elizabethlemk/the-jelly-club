@@ -16,3 +16,14 @@ You can add any breads or spreads so members (and yourself) can make sandwiches.
 
 ## You can view your's or other people's sandwich creations. Leave a review or just like it!
  ![alt text](https://github.com/elizabethlemk/the-jelly-club/blob/master/app/assets/images/Screen%20Shot%202019-02-15%20at%2012.48.54%20PM.png)
+
+#### Built With 
+Ruby on Rails 
+
+
+#### Created by 
+Elizabeth Le
+https://github.com/elizabethlemk
+
+Mohammed Ali
+https://github.com/ali-mohammed200
