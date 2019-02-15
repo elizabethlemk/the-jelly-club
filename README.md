@@ -10,9 +10,9 @@ You can add any breads or spreads so members (and yourself) can make sandwiches.
  
  ![alt text](https://github.com/elizabethlemk/the-jelly-club/blob/master/app/assets/images/Screen%20Shot%202019-02-15%20at%2012.49.17%20PM.png)
  
-You can edit your bio, upload a profile picture, or view your sandwiches, likes, or reviews.
+## You can edit your bio, upload a profile picture, or view your sandwiches, likes, or reviews. You can also go onto other people's profiles to see what they've made or commented as well.
  
   ![alt text](https://github.com/elizabethlemk/the-jelly-club/blob/master/app/assets/images/Screen%20Shot%202019-02-15%20at%2012.49.43%20PM.png)
 
-
+## You can view your's or other people's sandwich creations. Leave a review or just like it!
  ![alt text](https://github.com/elizabethlemk/the-jelly-club/blob/master/app/assets/images/Screen%20Shot%202019-02-15%20at%2012.48.54%20PM.png)
