@@ -48,15 +48,17 @@
 <div>
   <hr>
   <ul style="overflow-y: scroll; height:200px;">
-    <% @feedback.each do |feedback| %>
-      <% if feedback.comment != nil %>
-        <li>
-           <div class="review-rating" data-score = "<%= feedback.rating %>"></div>
-           "<%= feedback.comment %>" by <%= link_to feedback.user.user_name, user_path(feedback.user) %>
-        </li>
-      <% elsif @feedback.nil? %>
-        <p>No reviews to show. Be the first to leave a review!</p>
-      <% end %>
+    <% if !@feedback.empty? %>
+      <% @feedback.each do |feedback| %>
+        <% if feedback.comment != nil %>
+          <li>
+             <div class="review-rating" data-score = "<%= feedback.rating %>"></div>
+             "<%= feedback.comment %>" by <%= link_to feedback.user.user_name, user_path(feedback.user) %>
+          </li>
+          <% end %>
+        <% end %>
+    <% else %>
+      <p>No reviews to show. Be the first to leave a review!</p>
     <% end %>
   </ul>
   <hr>
