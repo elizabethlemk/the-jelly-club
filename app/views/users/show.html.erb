@@ -3,8 +3,8 @@
 <h1><%= @user.user_name %></h1>
 
 <!-- Profile Picture -->
-<% if @current_user.image.attachment != nil %>
-  <%= link_to image_tag(current_user.image, class: 'main-image', :style => "border: 1px solid #ddd;
+<% if @user.image.attachment != nil %>
+  <%= link_to image_tag(@user.image, class: 'main-image', :style => "border: 1px solid #ddd;
     border-radius: 25%;
     padding: 5px;
     width: 150px;"), user_path(@user) %>
@@ -26,13 +26,24 @@
 <!-- User's About Me -->
   <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
     <h3><%= @user.first_name %> <%= @user.last_name %></h3>
-    <h6>Location: <%= @user.location %></h6>
-    <h6>Birthday: <%= @user.birthday.strftime("%m/%d/%Y") %></h6>
-    <p><%= @user.bio %></p>
+    <% if @user.location.present? %>
+      <h6>Location: <%= @user.location %></h6>
+    <% end %>
+    <% if @user.birthday.present? %>
+      <h6>Birthday: <%= @user.birthday.strftime("%m/%d/%Y") %></h6>
+    <% end %>
+    <% if @user.bio.present? %>
+      <p><%= @user.bio %></p>
+    <% end %>
   </div>
 
 <!-- User's Sandwiches -->
     <div class="tab-pane fade show" id="v-pills-sandwich" role="tabpanel" aria-labelledby="v-pills-sandwich-tab">
+
+<!-- For a collapsible button -->
+<!-- <button data-toggle="collapse" data-target="#good"><h5>Delicious Sandwiches:</h5></button>
+<div id="good" class="collapse"> -->
+
       <div class="good">
         <h5>Delicious Sandwiches:</h5>
           <ul>

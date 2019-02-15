@@ -20,6 +20,10 @@
 @import "./_animation.css";
 
 // Main Body Styling
+html {
+  width: 100%;
+}
+
 body ul {
    list-style: none;
    margin: 0;
@@ -38,8 +42,8 @@ main {
 footer {
   position: relative;
   text-align: center;
-
 }
+
 main h1 {
   background: -webkit-linear-gradient(gold, #ff6633);
   -webkit-background-clip: text;
@@ -50,7 +54,6 @@ main h1, h2, h5 {
   color: #111;
   text-align: center;
   text-decoration: none;
-  transform: all 5s;
   font-family: sans-serif;
   text-transform: uppercase;
   letter-spacing: 6px;
@@ -68,9 +71,7 @@ main a:hover {
 }
 
 // Nav Bar Styling
-.navbar {
-  position: relative;
-}
+
 
 .navbar a {
   font-family: sans-serif;
@@ -87,6 +88,7 @@ main a:hover {
  font-family: sans-serif;
  text-transform: uppercase;
  letter-spacing: 2px;
+
 }
 
 .navbar ul li:hover {
@@ -99,7 +101,9 @@ main a:hover {
  opacity: 100;
  color: white;
  background-color: #111;
+ right: 0;
 }
+
 
 // Tabs Styling
 .actions{
