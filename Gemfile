@@ -16,7 +16,7 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 # Use Bootstrap for CSS Styling
-gem 'bootstrap', '~> 4.1.1'
+gem 'bootstrap', '~> 4.1.3'
 # Must use JQuery Rails for Bootstrap
 gem 'jquery-rails'
 # Use CoffeeScript for .coffee assets and views
