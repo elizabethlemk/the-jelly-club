@@ -4,6 +4,9 @@
 
 You must have an account to be able to view the website. Once logged in, breads, spreads, and sandwiches will be available for you to view.
 
+ https://the-jelly-club.herokuapp.com/
+ 
+
 ### log in using username: melonkitty, password: password
 
 You can add any breads or spreads so members (and yourself) can make sandwiches. You can log all the sandwiches you made so you remember which combination was the best or worst. Every creation can be reviewed, or you can just like it. 
